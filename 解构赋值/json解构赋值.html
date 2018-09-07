@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let json={
+        name:'username',
+        age:'50',
+        job:'web',
+        hobby:[
+            {
+                pingpong:'5',
+                bable:'8'
+
+            }
+
+        ]
+    }
+    let {name:n,age,job,hobby}=json;
+    name='user1';
+    json.name='user2';
+    let [{pingpong,bable}]=hobby;
+    console.log(json);
+    console.log(n,age,job);
+    console.log(name,age,job,pingpong,bable);
+</script>
+</html>

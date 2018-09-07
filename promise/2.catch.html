@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    let a = 1;
+    let promise = new Promise((resolve,reject)=>{
+        //resovle 成功时调用
+        //reject 失败时调用
+        if(a==10){
+            resolve('成功');
+        }
+        else{
+            reject('失败')
+        }
+    });
+    promise.then(res=>{//成功时调用的函数
+        console.log(res);
+    })
+    promise.catch(err=>{//和then中的错误捕获效果相同
+        console.log(err);
+    })
+    // catch可以直接加到then后面then(res=>{}).catch(err=>{})
+</script>
+</html>

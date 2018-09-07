@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a=[1,2,3,4];
+    let b=[...a];//Rest运算符不会引用原数组
+    let c=a;//直接用等号会对原数组进行引用
+    c.unshift(7);
+    b.push(9);
+    let [first,...last]=[1,2,3,4,5];
+    console.log(...[first,last]);
+    console.log(b);
+    console.log(c);
+    console.log(a);
+
+    //普通函数传参
+    function fn1(...arg) {
+        console.log(arg); //数组
+        console.log(arguments); //类数组
+    }
+    fn1(45,'sji',89,'jdfidn');
+
+    //箭头函数传参
+    var fn2 = (...arr)=>{
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+        // console.log(arguments);  箭头函数中没有arguments,和this
+    }
+    fn2('nishi',454,54,'jdsif');
+</script>
+</html>

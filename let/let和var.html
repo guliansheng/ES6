@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	//var定义变量的作用域；
+	for (var i = 0; i < 3; i++) { //此时i被定义为全局变量；
+		console.log('for循环中用var定义的i变量：' + i);
+	}
+	console.log('for循环外输出for循环中定义的i变量：' + i);
+
+
+
+	//var定义变量的特性：存在预解析变量(变量提升)；
+	var j = 12;
+	~function fn() {
+		// var j;
+		console.log(j);
+		// j=5;
+		var j = 5; //先使用局部变量，此时的效果应该是注释的内容,变量提升了，先进行了定义，但没有赋值，所以控制台显示undefined;
+	}();
+
+
+
+	//let定义的变量不能预解析；
+	//但是如果代码中使用了let,浏览器会以es6语法进行代码解析,这时如果在使用let创建的变量上方使用该变量,浏览器会报错
+	// let a = 200;
+	// {
+	// 	 {
+	// 		console.log(a);
+	// 	 }
+	// 	 let a = 100;
+	// }//=>error:a is not defind
+
+
+	let m = 9;
+	for (let m = 0,n = 0; m < 3; m++,n++) {
+		let m = "aaa";
+		console.log(m,n);
+	}
+	console.log(m);
+	//每次循环都会形成一个不销毁的私有作用域(块级作用域),这里的()也相当与一个块级作用域;
+	//这个流程相当于执行下面操作
+	{
+		let m=9;
+		{
+			let m = 0;
+			let n = 0;
+			{
+				let m="aaa";
+				console.log(m,n);
+			}
+		}
+		{
+			let m = 1;
+			let n = 1;
+			{
+				let m="aaa";
+				console.log(m,n);
+			}
+		}
+		{
+			let m = 2;
+			let n = 2;
+			{
+				let m="aaa";
+				console.log(m,n);
+			}
+		}
+		console.log(m);
+	}
+
+
+	//这里的{}不是块级作用域
+	var obj = {}
+</script>
+
+</html>

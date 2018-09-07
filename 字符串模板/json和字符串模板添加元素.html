@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="news">
+        <ul></ul>
+        <ul></ul>
+    </div>
+</body>
+<script>
+    let data=[
+        {title:'习近平与海南跨越40年的深情故事',see:100},
+        {title:'新时代全面深化改革开放 习近平下了一步大棋',see:399},
+        {title:'把经济特区办得更好 中国开放的大门只会越开越大',see:400}
+    ];
+    let info= '{name:"gu",age:23,hobby:"xu"}';
+    let info2='{top:[{title:"新浪"},{title:"百度"},{title:"网易"}]}';
+    let infoJson=eval('('+info+')');
+    console.log(infoJson);
+    console.log(eval('('+info2+')'));
+    let news=document.querySelectorAll('#news ul');
+    for(let i=0 ;i<data.length;i++){
+        let li=document.createElement('li');
+        li.innerHTML=`<span>${data[i].title}</span><span>阅读人数:${data[i].see}</span><a href='javascript:'>详情</a>`;
+        let li2=document.createElement('li');
+        li2.innerHTML=`<span>${data[i].title}</span><span>阅读人数:${data[i].see}</span><a href='javascript:'>详情</a>`;
+        news[0].appendChild(li);
+        news[1].appendChild(li2);
+    }
+    let data2=JSON.stringify(data);
+    console.log(data2);
+    console.log(data);
+</script>
+</html>

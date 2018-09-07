@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //解构交换两个变量值；
+    let a=15,b='aaa';
+    [a,b]=[b,a];
+    console.log(a,b);
+
+
+    //解构函数返回值
+    function get1(){
+        let c=15,d=45;
+        return [c,d];
+    }
+    let [c,d]=get1();
+    console.log(c,d);
+
+
+    function get2(){
+        return {
+            e:45,
+            f:'fff'
+        };
+    }
+    let {e,f}=get2();
+    console.log(e,f);
+
+</script>
+</html>

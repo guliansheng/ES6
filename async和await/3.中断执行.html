@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    //最好将所有的await放到try-catch中
+    async function fn(){
+        let a = await Promise.resolve('success');
+
+        try{
+            await Promise.reject('error');
+        }catch(e){console.log(e)}
+
+        await Promise.reject('error2').catch(err=>{
+            console.log(err)
+        })
+        console.log(a);
+    }
+    fn().then(res=>{
+        // console.log(res);
+    }).catch(err=>{
+        console.log(err);
+    })
+</script>
+</html>

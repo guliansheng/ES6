@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let str='strive';
+    let java='javascript';
+    class Person{
+        str(){
+            return '这是正常的命名方法';
+        }
+        [str](){
+            return '这是变量名命名方法';
+        }
+        [str+java](){
+            return '这是表达式命名方法';
+        }
+    }
+    let P=new Person();
+    console.log(P.str());
+    console.log(P.strive());
+    console.log(P[str]());
+    console.log(P[str+java]());
+    console.log(P.strivejavascript());
+</script>
+</html>

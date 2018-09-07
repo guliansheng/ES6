@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //给无数据的值定义默认值
+    let [a,b,c='暂无数据']=['aaa','bbb'];
+    let [d,e,f]=['aaa','bbb',undefined];
+    let [g,k,l='暂无']=['aaa','bbb',null];
+    //当数据为null时，无法给默认值，只能通过判断来赋值；
+    if(l==null){
+        l='zanwu';
+    }
+    console.log(a,b,c);
+    console.log(d,e,f);
+    console.log(g,k,l);
+</script>
+</html>

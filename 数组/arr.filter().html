@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr=[
+        {title:'内涵段子',inst:50000,hot:true},
+        {title:'内涵段子tv',inst:40000,hot:true},
+        {title:'快手',inst:31000,hot:false},
+        {title:'抖音',inst:4500,hot:false}
+    ];
+    let hot=arr.filter((val,index,json)=>{
+        // if(val.title.includes('内涵段子') || val.inst>30000){
+        //     return false;
+        // }
+        // else{
+        //     return true;
+        // }
+        //返回值为true的留下来,返回到新的数组中
+        return (val.title.includes('内涵段子') && val.inst>40000)?false:true;
+    });
+    console.log(hot);
+    console.log(arr);
+    // console.log(hot[0].title);
+</script>
+</html>

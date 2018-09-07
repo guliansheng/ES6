@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let json={
+        title:'排名',
+        top:[
+                {title:'阜阳师范学院',students:11999},
+                {title:'安徽大学',students:30000},
+                {title:'合肥师范学院',students:34000}
+            ]
+    }
+    let ret=json.top.map((val,index,json)=>{
+        return val.title=='阜阳师范学院'?val.students:false;
+    })
+    console.log(ret);
+    let arr=json.top.map((val,index,json)=>{  
+        let json2={};
+        json2.s=`人数是：${val.students+1000}`;
+        json2.t=`这是：${val.title}--------`;
+        // json2[index]=`这是${val.title}--------人数是：${val.students+1000}`; 
+        return json2;
+        // let arr2=[];
+        // if(val.title.includes('阜阳')){
+        //     arr2[index]=val;
+        // }
+        // return arr2;
+    })
+    console.log(arr);
+    // console.log(arr[0][0].title);
+</script>
+</html>
