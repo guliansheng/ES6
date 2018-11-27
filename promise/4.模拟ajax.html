@@ -29,6 +29,7 @@ let getUserData = (resolve,reject)=>{
     },2000)
 }
 new Promise(userlogin).then(res=>{
+    console.log(res);
     console.log('用户登录成功');
     return new Promise(getUserData);
 }).then(res=>{

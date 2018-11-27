@@ -13,7 +13,6 @@
     //最好将所有的await放到try-catch中
     async function fn(){
         let a = await Promise.resolve('success');
-
         try{
             await Promise.reject('error');
         }catch(e){console.log(e)}

@@ -22,6 +22,7 @@
             reject('失败')
         }
     });
+    console.log(promise);
     promise.then(res=>{//成功时调用的函数
         console.log(res);
     },err=>{//失败时调用的函数,可以不写,会在控制台显示错误
