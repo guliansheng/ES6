@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+<script type="text/javascript">
+let arr=document.querySelectorAll('ul li');
+// for(let i=0; i<arr.length;i++){
+// 	arr[i].innerHTML='aaa';
+// }
+
+let json={
+	name:'user',
+	age:34,
+	favorite:[
+		{ball:5,play:8,read:3},
+		{computer:9,vidoe:7}
+	]
+}
+let {name,age,favorite}=json;
+let [{ball,play,read},{computer,vidoe}]=favorite;
+console.log(name,ball);
+let json2=[
+{title:'阜阳师范学院',students:20000},
+{title:'安徽大学',students:25000},
+{title:'合肥师范学院',students:24000}
+]
+json2.forEach((val,index,arr)=>{
+	console.log(val);
+	let {title,students}=val;
+	console.log(title,students);
+});
+let newArr=json2.map((val,index,arr)=>{
+	let newArr=[];
+	let {title,students}=val;
+	newArr={'xueyuan':'------'+title+'-------','xuesheng':'人数'+students+'-------'}
+	return newArr;
+});
+console.log(newArr);
+for(val of newArr){
+	console.log(val);
+}
+arr.forEach((val,index,arr)=>{
+	val.innerHTML=newArr[index].xueyuan+''+newArr[index].xuesheng;
+	if(index==1){
+		val.innerHTML=newArr[index].xueyuan+'-----'+newArr[index].xuesheng;
+	}
+	console.log(val);
+});
+</script>
+</html>
